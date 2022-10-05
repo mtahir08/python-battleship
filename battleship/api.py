@@ -47,4 +47,4 @@ def shot():
 @app.route('/battleship', methods=['DELETE'])
 def delete_battleship_game():
   game.delete_game_progress()
-  return flask.jsonify({"result": "Game has been reset successfully"}), http.HTTPStatus.OK
+  return flask.jsonify({"result": "Game progress has been deleted successfully"}), http.HTTPStatus.OK
