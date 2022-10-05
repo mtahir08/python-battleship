@@ -5,7 +5,7 @@ class Board:
   def __init__(self, rows, cols):
     self.rows = rows
     self.cols = cols
-    self.grid = [[0] * self.rows for i  in range(self.cols)]
+    self.grid = [[0] * self.rows for i in range(self.cols)]
   
   def can_plot_ship_vertically(self, x_axis, y_axis, total_size):
     ship_size = y_axis
@@ -65,3 +65,5 @@ class Board:
       return constant.HIT
     return constant.SINK
     
+  def delete_game_progress(self):
+    self.grid = [[0] * self.rows for i in range(self.cols)]

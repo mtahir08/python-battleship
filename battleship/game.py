@@ -21,3 +21,7 @@ class Game:
 
   def fire(self, coords):
     return self.board.place_shot(coords)
+
+  def delete_game_progress(self):
+    self.board.delete_game_progress()
+    return True
