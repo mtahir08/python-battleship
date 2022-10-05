@@ -42,3 +42,26 @@ class Board:
         return True
       return False
     return False
+
+  def place_shot(self, coords):
+    x_axis_to_shot = coords.get('x')
+    y_axis_to_shot = coords.get('y')
+    ship_name = self.grid[x_axis_to_shot][y_axis_to_shot]
+    # check if ship part already got Hit
+    if ship_name == constant.HIT:
+      return constant.HIT
+    # check if hit on water
+    elif ship_name == 0:
+      return constant.WATER
+    
+    ship_blocks = 0
+    for x_axis in self.grid:
+      for y_axis in x_axis:
+        if y_axis == ship_name:
+          ship_blocks = ship_blocks + 1
+
+    if ship_blocks > 1:
+      self.grid[x_axis_to_shot][y_axis_to_shot] = constant.HIT
+      return constant.HIT
+    return constant.SINK
+    

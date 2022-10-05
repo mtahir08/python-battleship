@@ -18,3 +18,6 @@ class Game:
       if not ship_obj.plot_ship(self.board):
         return False
     return True
+
+  def fire(self, coords):
+    return self.board.place_shot(coords)
