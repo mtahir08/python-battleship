@@ -10,10 +10,11 @@ ROWS = 10
 COLS = 10
 
 app = flask.Flask(__name__)
-game = Game(ROWS, COLS)
+game = None
 
 @app.route('/battleship', methods=['POST'])
 def create_battleship_game():
+    game = Game(ROWS, COLS)
     response = flask.request.data
     data = json.loads(response)
     ships = data.get("ships")
