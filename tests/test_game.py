@@ -39,13 +39,13 @@ class TestBattleship(unittest.TestCase):
     def test_shot_sink(self):
       board = Board(10, 10)
       board.plot_ship_on_board(3, 4, "ship-1", 4, 'H')
-      shot = board.place_shot(3, 4)
+      shot = board.place_shot({'x': 3, 'y': 4 })
       self.assertEqual(shot, "SINK")
 
     def test_shot_water(self):
       board = Board(10, 10)
       board.plot_ship_on_board(2, 1, "ship-1", 2, 'H')
-      shot = board.place_shot(6, 4)
+      shot = board.place_shot({'x': 6, 'y': 4 })
       self.assertEqual(shot, "WATER")
 
 if __name__ == "__main__":
