@@ -9,13 +9,13 @@ class TestBattleship(unittest.TestCase):
     def test_plot_ship_vertically(self):
       board = Board(10, 10)
       board.plot_ship_on_board(1, 2, "ship-1", 4, 'V')
-      can_plot_ship = board.can_plot_ship_vertically(1, 2, 6)
+      can_plot_ship = board.can_plot_ship_vertically(5, 7, 5)
       self.assertTrue(can_plot_ship)
 
     def test_plot_ship_horizontally(self):
       board = Board(10, 10)
       board.plot_ship_on_board(2, 1, "ship-1", 4, 'H')
-      can_plot_ship = board.can_plot_ship_horizontally(2, 1, 5)
+      can_plot_ship = board.can_plot_ship_horizontally(5, 7, 7)
       self.assertTrue(can_plot_ship)
 
     def test_fail_plot_ship_vertically(self):
