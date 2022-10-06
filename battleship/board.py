@@ -63,6 +63,7 @@ class Board:
     if ship_blocks > 1:
       self.grid[x_axis_to_shot][y_axis_to_shot] = constant.HIT
       return constant.HIT
+    self.grid[x_axis_to_shot][y_axis_to_shot] = constant.HIT
     return constant.SINK
     
   def delete_game_progress(self):
